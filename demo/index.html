@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>demo</title>
+    <script data-main="js/demo" src="js/require-jquery.js"></script>
+    <script type="text/javascript" src="js/TabView.js"></script>
+    <script type="text/javascript">$(function () {new TabView('#g-navi');});</script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <h1>demo</h1>
+
+      <nav id="g-navi">
+        <ul>
+          <!--<li><a href="#basicparser">run BasicParser</a></li>-->
+          <!--<li><a href="#exprparser">run ExprParser</a></li>-->
+          <li><a href="#lexer">run Lexer</a></li>
+        </ul>
+      </nav>
+
+<!--
+      <section id="basicparser">
+        <h2>run BasicParser</h2>
+        <form id="demo-form-basicparser">
+          <h3>sourcecode</h3>
+            <textarea name="sourcecode" cols="90" rows="15">sum = 0
+i = 1
+
+while i < 10 {
+  sum = sum + i
+  i = i + 1
+}
+sum</textarea>
+          <h3>result</h3>
+          <textarea name="result" cols="90" rows="5"></textarea>
+          <p><input type="submit" /></p>
+        </form>
+      </section>
+-->
+
+<!--
+      <section id="exprparser">
+        <h2>run ExprParser</h2>
+        <form id="demo-form-exprparser">
+          <h3>sourcecode</h3>
+          <textarea name="sourcecode" cols="90" rows="5">3 + 5 * 2 -1</textarea>
+          <h3>result</h3>
+          <textarea name="result" cols="90" rows="5"></textarea>
+          <p><input type="submit" /></p>
+        </form>
+      </section>
+-->
+
+      <section id="lexer">
+        <h2>run Lexer</h2>
+        <form id="demo-form-lexer">
+          <h3>sourcecode</h3>
+            <textarea name="sourcecode" cols="90" rows="15">sum = 0
+i = 1
+
+print "start program \"sum\""
+
+while i < 10 {
+  sum = sum + i
+  i = i + 1
+}
+sum</textarea>
+          <h3>result</h3>
+          <textarea name="result" cols="90" rows="15"></textarea>
+          <p><input type="submit" /></p>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
