@@ -15,7 +15,7 @@ h1 {
   margin: 0em auto;
 }
 #wrap section {
-  border: solid 0.1em blue;
+  border: solid 0.1em gray;
   padding: 1em;
   margin: 0em 0em 1em 0em;
 }
@@ -28,11 +28,13 @@ h1 {
 #g-navi ul li {
   display: block;
   float:left;
-  border-style: solid;
-  border-color: blue;
+  border-style: solid #AAA;
+  /*border-color: blue;*/
   border-width: 0.1em 0.1em 0 0;
   padding: 0;
   margin: 0em;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
 #g-navi ul li:first-child {
   border-width: 0.1em 0.1em 0;
@@ -42,6 +44,16 @@ h1 {
   padding: 0.5em;
 }
 #g-navi ul li a.active {
-	background: blue;
-	color: white;
+	/*background: blue;*/
+	/*color: white;*/
+	
+  border: 1px solid #AAA;
+  background: #D1D1D1;
+  background: -o-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -ms-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -moz-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: -webkit-linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  background: linear-gradient(top, #ECECEC 50%, #D1D1D1 100%);
+  color: #555;
+  text-decoration: none;
 }
