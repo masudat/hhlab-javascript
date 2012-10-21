@@ -1,7 +1,7 @@
 // 作った言語をデモとして、試しに動かすためのjs
 require(['jquery', '../../lib/main'], function ($) {
 	$(function () {
-		// lexerを走らせる
+		// フォームがsubmitされたらlexerを走らせる
 		$('#demo-form-lexer').submit(function (e) {
 			e.preventDefault();
 
@@ -11,9 +11,9 @@ require(['jquery', '../../lib/main'], function ($) {
 			// lexer生成
 			var lexer = new Lexer(sourcecode);
 
-			// readでtokenを取得して、ひとつひとつ出力
+			// readでtokenを取得して、ひとつひとつフォームのresult欄に出力
 			var token;
-
+			
 			$('*[name="result"]', this).first().html('');
 			while (token = lexer.read()) {
 				if (token.lineNumber < 0) {
