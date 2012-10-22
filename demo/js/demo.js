@@ -14,11 +14,14 @@ require(['jquery', '../../lib/main'], function ($) {
 			// readでtokenを取得して、ひとつひとつフォームのresult欄に出力
 			var token;
 			
+			//resultのテキストエリアをリセット
 			$('*[name="result"]', this).first().html('');
+			//readでtokenを取得
 			while (token = lexer.read()) {
 				if (token.lineNumber < 0) {
 					break;
 				}
+				//ひとつひとつ出力していく。=>[lineNumber]token
 				$('*[name="result"]', this).first().append(
 					'=> [' + token.lineNumber + '] ' + token + '\n'
 				);
@@ -26,8 +29,24 @@ require(['jquery', '../../lib/main'], function ($) {
 		});
 
 		// ExprParserを走らせる
-		//$('#demo-form-exprparser').submit(function (e) {
-		//});
+		$('#demo-form-exprparser').submit(function (e) {
+			e.preventDefault();
+			
+			//同様にソースコードはフォームのsourcecode欄から取得
+			var sourcecode = $('*[name="sourcecode"]', this).first().val() || '';
+			
+			//Lexer生成
+			var lexer = new Lexer(sourcecode);
+			//ExprParser生成
+			var p = new ExprParser(lexer);
+			//
+			var t = p.expression();
+			
+			//resultのテキストエリアをリセット
+			$('*[name="result"]', this).first().html('');
+			//結果を文字列にして出力
+			$('*[name="result"]', this).first().html(t.toString());
+		});
 
 		// BasicParserを走らせる
 		//$('#demo-form-basicparser').submit(function (e) {
