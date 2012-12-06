@@ -49,7 +49,26 @@ require(['jquery', '../../lib/main'], function ($) {
 		});
 
 		// BasicParserを走らせる
-		//$('#demo-form-basicparser').submit(function (e) {
-		//});
+		$('#demo-form-basicparser').submit(function (e) {
+		e.preventDefault();
+
+			//同様にソースコードはフォームのsourcecode欄から取得
+			var sourcecode = $('*[name="sourcecode"]', this).first().val() || '';
+			var $result = $('*[name="result"]', this).first();
+			
+			//Lexer生成
+			var lexer = new Lexer(sourcecode);
+			//BasicParser生成
+			var p = new BasicParser(lexer);
+			var t;
+
+			$result.html('');
+			
+			//ファイルの最後まで読む
+			while (lexer.peek(0) != Token.EOF) {
+				t = p.program();
+				$result.append(t.toString() + '\n');
+			}
+		});
 	});
 });
