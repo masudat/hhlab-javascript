@@ -70,5 +70,34 @@ require(['jquery', '../../lib/main'], function ($) {
 				$result.append(t.toString() + '\n');
 			}
 		});
+		
+		//Interpreterを走らせる
+		$('#demo-form-interpreter').submit(function (e) {
+		e.preventDefault();
+
+			//同様にソースコードはフォームのsourcecode欄から取得
+			var sourcecode = $('*[name="sourcecode"]', this).first().val() || '';
+			var $result = $('*[name="result"]', this).first();
+			
+			//Lexer生成
+			var lexer = new Lexer(sourcecode);
+			//BasicParser生成
+			var p = new BasicParser(lexer);
+			//環境
+			var env = new BasicEnv();
+			var t;
+
+			$result.html('');
+			
+			//ファイルの最後まで読む
+			while (lexer.peek(0) != Token.EOF) {
+				t = p.program();
+				//"=>"を付けて出力する
+				$result.append([
+					'=>', t.eval(env), '\n'
+				].join(' '));
+			}
+		});
+		
 	});
 });
