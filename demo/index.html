@@ -14,47 +14,12 @@
 
       <nav id="g-navi">
         <ul>
-          <!--<li><a href="#basicparser">run BasicParser</a></li>-->
-          <!--<li><a href="#exprparser">run ExprParser</a></li>-->
-          
+          <li><a href="#interpreter">run Interpreter</a></li>
           <li><a href="#basicparser">run BasicParser</a></li>
           <li><a href="#exprparser">run ExprParser</a></li>
           <li><a href="#lexer">run Lexer</a></li>
         </ul>
       </nav>
-
-<!--
-      <section id="basicparser">
-        <h2>run BasicParser</h2>
-        <form id="demo-form-basicparser">
-          <h3>sourcecode</h3>
-            <textarea name="sourcecode" cols="90" rows="15">sum = 0
-i = 1
-
-while i < 10 {
-  sum = sum + i
-  i = i + 1
-}
-sum</textarea>
-          <h3>result</h3>
-          <textarea name="result" cols="90" rows="5"></textarea>
-          <p><input type="submit" /></p>
-        </form>
-      </section>
--->
-
-<!--
-      <section id="exprparser">
-        <h2>run ExprParser</h2>
-        <form id="demo-form-exprparser">
-          <h3>sourcecode</h3>
-          <textarea name="sourcecode" cols="90" rows="5">3 + 5 * 2 -1</textarea>
-          <h3>result</h3>
-          <textarea name="result" cols="90" rows="5"></textarea>
-          <p><input type="submit" /></p>
-        </form>
-      </section>
--->
       <section id="lexer">
         <h2>run Lexer</h2>
         <form id="demo-form-lexer">
@@ -72,7 +37,6 @@ sum</textarea>
           <p><input type="submit" value="run"/></p>
           <h3>result</h3>
           <textarea name="result" cols="90" rows="15"></textarea>
-          <!--<p><input type="submit" /></p>-->
         </form>
       </section>
       
@@ -80,10 +44,10 @@ sum</textarea>
         <h2>run ExprParser</h2>
         <form id="demo-form-exprparser">
           <h3>sourcecode</h3>
-          <textarea name="sourcecode" cols="90" rows="5">3 + 5 * 2 -1</textarea>
+          <textarea name="sourcecode" cols="90" rows="10">3 + 5 * 2 -1</textarea>
           <p><input type="submit" value="run"/></p>
           <h3>result</h3>
-          <textarea name="result" cols="90" rows="5"></textarea>
+          <textarea name="result" cols="90" rows="10"></textarea>
         </form>
       </section>
       
@@ -106,7 +70,24 @@ i = i + 1
 even + odd</textarea>
 		  <p><input type="submit" value="run"/></p>
           <h3>result</h3>
-          <textarea name="result" cols="90" rows="5"></textarea>
+          <textarea name="result" cols="90" rows="10"></textarea>
+        </form>
+      </section>
+      
+      <section id="interpreter">
+        <h2>run Interpreter</h2>
+        <form id="demo-form-interpreter">
+          <h3>sourcecode</h3>
+            <textarea name="sourcecode" cols="90" rows="15">sum = 0
+i = 1
+while (i < 10) {
+  sum = sum + i
+  i = i + 1
+}
+sum</textarea>
+		  <p><input type="submit" value="run"/></p>
+          <h3>result</h3>
+          <textarea name="result" cols="90" rows="10"></textarea>
         </form>
       </section>
 
